@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scavenger Hunt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #222;
+            background: #f7f7f7;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .clue {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+
+        input, button {
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 8px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #feedback {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Scavenger Hunt</h1>
+
+    <section class="clue">
+        <h2>Instructions</h2>
+        <p>add instructions here</p>
+    </section>
+
+    <section class="clue">
+        <h2>Clue #1</h2>
+        <!-- EDIT CLUE #1 HERE -->
+        <p>blank clue</p>
+    </section>
+
+    <section class="clue">
+        <h2>Clue #2</h2>
+        <!-- EDIT CLUE #2 HERE -->
+        <p>blank clue</p>
+
+        <label for="answer">Enter the number you discovered:</label><br>
+        <input
+            type="number"
+            id="answer"
+            placeholder="Enter a number"
+        >
+        <button onclick="checkAnswer()">Submit</button>
+
+        <p id="feedback" aria-live="polite"></p>
+    </section>
+
+    <section class="clue">
+        <h2>Clue #3</h2>
+        <!-- EDIT CLUE #3 HERE -->
+        <p>blank clue</p>
+    </section>
+
+    <section class="clue">
+        <h2>Clue #4</h2>
+        <!-- EDIT CLUE #4 HERE -->
+        <p>blank clue</p>
+    </section>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById("answer").value;
+            const feedback = document.getElementById("feedback");
+
+            if (answer.trim() !== "" &&
+                Number(answer) === 1000) {
+                window.location.href = "solution.html";
+            } else {
+                feedback.textContent = "Incorrect. Try again!";
+            }
+        }
+    </script>
+
+</body>
+</html>
